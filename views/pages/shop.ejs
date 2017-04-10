@@ -1,0 +1,360 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    <% include ../partials/header.ejs %>
+
+</head>
+
+<body>
+    <header>
+        <div class="search">
+            <input type="submit" value="&#xf002;" class="search-btn fa ib-m">
+            <div class="search-slide ib-m">
+        		<input type="text" placeholder="Enter your search" class="ib-m">
+                <div class="search-close ib-m"><i class="fa fa-times"></i></div>
+        	</div>
+
+        </div>
+        <div id="hamburger-menu"><a class="img-replace" href="#">Menu</a></div>
+        <div id="cart-trigger">
+            <a class="cart-link" href="#">
+            <span class="cart-text fa fa-shopping-cart"><span class="cart-quantity empty">0</span></span>
+          </a>
+        </div>
+        <!-- Mega Menu -->
+        <div class="mega-menu fadeIn animated" id="mega_menu">
+            <div class="mm-3column">
+                <span class="left-images">
+                    <img  src="images/4.jpg">
+                    <p><a href="#">Most Popular Styles </a></p>
+                </span>
+                </div>
+                <div id="close-menu"><a class="img-replace" href="#">Menu</a></div>
+                <div class="mm-3column">
+                <span class="categories-list">
+                    <span class="link"><i class="fa fa-mobile"></i>&nbsp;Computer</span>
+                    <ul class="default submenu">
+                        <li><a href="#">Desktops</a></li>
+                        <li><a href="#">Laptops</a></li>
+                        <li><a href="#">Tablets</a></li>
+                        <li><a href="#">Monitors</a></li>
+                        <li><a href="#">Networking Printers</a></li>
+                        <li><a href="#">Scanners</a></li>
+                        <li><a href="#">Jumpers & Cardigans</a></li>
+                    </ul>
+                </span>
+
+            </div>
+            <div class="mm-3column">
+                <span class="categories-list">
+                    <span class="link"><i class="fa fa-mobile"></i>&nbsp;Rest & Sport</span>
+                    <ul class="default submenu">
+                        <li><a href="#" class=".bike">Bicycles</a></li>
+                        <li><a href="#">Plasma TVs</a></li>
+                        <li><a href="#">3D TVs</a></li>
+                        <li><a href="#">DVD & Blu-ray Players</a></li>
+                        <li><a href="#">Home Theater Systems</a></li>
+                        <li><a href="#">Cell Phones</a></li>
+                        <li><a href="#">Apple iPhone</a></li>
+
+                    </ul>
+                </span>
+            </div>
+            <div class="mm-3column">
+                <span class="categories-list">
+                    <span class="link"><i class="fa fa-mobile"></i>&nbsp;Clothes</span>
+                    <ul class="default submenu">
+                        <li><a href="#">Clothes</a></li>
+                        <li><a href="#">Man</a></li>
+                        <li><a href="#">Speakers</a></li>
+                        <li><a href="#">Subwoofers</a></li>
+                        <li><a href="#">Amplifiers</a></li>
+                        <li><a href="#">MP3 Players</a></li>
+                        <li><a href="#">iPods</a></li>
+                    </ul>
+            </span>
+        </div>
+    </div>
+    <!-- Mega Menu -->
+    </header>
+
+    <nav id="main-nav">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a class="current" href="#">Shop</a></li>
+            <li class="drop-down"><a href="#">Catalog</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+<main>
+        <ul id="gallery-items" class="container">
+        </ul> <!-- cd-gallery-items -->
+    </main>
+
+    <div id="shadow-layer"></div>
+
+    <div id="cart">
+        <h2>Cart</h2>
+        <ul class="cart-items">
+        </ul> <!-- cart-items -->
+
+        <div class="cart-total">
+            <p>Subtotal <span class="subtotalTotal">$0.00</span></p>
+            <p>Tax <span class="taxes">$0.00</span></p>
+            <p>Shipping <span class="shipping">$0.00</span></p>
+            <p>Total <span class="finalTotal">$0.00</span></p>
+        </div> <!--cart-total -->
+
+        <a href="#" class="checkout-btn">Checkout</a>
+        <p class="error"></p>
+        <p class="go-to-cart"><a href="#">Go to cart page</a></p>
+    </div> <!-- cart -->
+
+<span class='Top'><i class='fa fa-chevron-up'></i></span>
+<!-- / Product Templates for Shop & Cart -->
+<script id="productTemplate" type="text/template">
+  <figure class="product">
+      <img />
+     <div class="button">
+      <div class="prices"></div>
+      <a class="addtocart">
+      <div class="add">Add to Cart</div>
+      <div class="added">Added!</div>
+      </a>
+  </div>
+  <figcaption>
+  <h3></h3>
+  <p></p>
+  <div class="price">
+    <s></s>
+  </div>
+</figcaption><a href="#"><i class="add">&nbsp;</i>
+  </a>
+  </figure>
+</script>
+
+<script id='cartItem' type='text/template'>
+  <li class="cart-product">
+      <span><input class="qty" value="1"></span>
+      <div class="price"></div>
+      <a href="#" class="item-remove img-replace">Remove</a>
+      <code class="subtotal"></code>
+  </li>
+</script>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/shop.js"></script>
+<script>
+
+$(document).ready(function () {
+
+    var $cart = $('.cart-items');
+    var menu_navigation = $('#main-nav'),
+          $L = 900,
+          cart_trigger = $('#cart-trigger'),
+          hamburger_icon = $('#hamburger-menu'),
+          cart = $('#cart'),
+          shadow_layer = $('#shadow-layer');
+
+    cart_trigger.on('click', function () {
+        menu_navigation.removeClass('speed-in');
+        toggle_panel_visibility(cart, shadow_layer, $('body'));
+    });
+
+    shadow_layer.on('click', function () {
+        cart.removeClass('speed-in');
+        menu_navigation.removeClass('speed-in');
+        shadow_layer.removeClass('is-visible');
+        $('body').removeClass('overflow-hidden');
+    });
+
+    hamburger_icon.on('click', function () {
+        cart.removeClass('speed-in');
+        toggle_panel_visibility(menu_navigation, shadow_layer, $('body'));
+    });
+
+    move_navigation(menu_navigation, $L);
+
+    $(window).on('resize', function () {
+        move_navigation(menu_navigation, $L);
+        if ($(window).width() >= $L && menu_navigation.hasClass('speed-in')) {
+            menu_navigation.removeClass('speed-in');
+            shadow_layer.removeClass('is-visible');
+            $('body').removeClass('overflow-hidden');
+        }
+    });
+
+    $(window).scroll(function () {
+        if ($(this).scrollTop() >= 500) {
+            $('.Top').fadeIn();
+        } else {
+            $('.Top').fadeOut();
+        }
+    });
+    $('.Top').click(function () {
+        $('html,body').stop().animate({ scrollTop: 0 });
+    });
+
+    $('.drop-down').on('click', function () {
+        $('.mega-menu').toggleClass('speed-in');
+    });
+
+    $('#close-menu').on('click', function () {
+        $('.mega-menu').removeClass('speed-in');
+    });
+
+    var searchBtn = '.search-btn', searchSlide = '.search-slide', searchTxt = '.search-slide input[type=text]', searchClose = '.search-close', searchSpeed = 300;
+    $(searchBtn).click(function () {
+        $(searchSlide).animate({ 'width': '15.5625em' }, searchSpeed);
+        $(searchTxt).focus();
+    });
+    $(searchClose).click(function () {
+        $(searchSlide).animate({ 'width': 0 }, searchSpeed);
+    });
+
+    var accordion = new Accordion($('#mega_menu'), false);
+
+    var makeCatalog = function(url){
+    $.ajax({
+        url: url,
+        contentType: "application/json; charset=utf-8",
+        dataType: "text",
+        success: function(data) {
+            var products = $.parseJSON(data);
+            for (var i=0;i<products.length;++i)
+            {
+            var $template = $($('#productTemplate').html());
+
+                $template.find('img').attr("src", products[i]["picture"]);
+
+                $template.find('h3').text(products[i]["name"]);
+                $template.find('h5').text(products[i]["name"]);
+
+                $template.find('p').text(products[i]["description"].substring(0,80));
+                $template.find('article').text(products[i]["description"]);
+
+                $template.find('s').text('$' + products[i]["oldprice"]);
+                $template.find('.price').append('$' + products[i]["price"]);
+                $template.find('.prices').text('$' + products[i]["price"]);
+
+                $template.data('id', products[i].id);
+                $template.data('name', products[i]["name"]);
+                $template.data('price', products[i]["price"]);
+                $template.data('image', products[i]["picture"]);
+                $("<li></li>").append($template).appendTo("#gallery-items");
+            }
+        }
+    });
+    }
+
+    makeCatalog("data/catalog.json");
+
+    var submenu = 'catalog';
+
+    $('body').on('click', '.submenu li', function () {
+        submenu = $(this).find('a').text();
+        $('.mega-menu').removeClass('speed-in');
+
+        switch (submenu){
+            case 'Bicycles':
+                $("#gallery-items").empty();
+                makeCatalog("data/bicycles.json");
+                break;
+            default:
+                $("#gallery-items").empty();
+                makeCatalog("data/catalog.json");
+            }
+    });
+
+    $('body').on('click', '.product .add', function () {
+        var items = $cart.children(), $item = $(this).parents('.product'), $template = $($('#cartItem').html()), $matched = null, quantity = 0;
+        $matched = items.filter(function (index) {
+            var $this = $(this);
+            return $this.data('id') === $item.data('id');
+        });
+        if ($matched.length) {
+            quantity = +$matched.find('.qty').val() + 1;
+            $matched.find('.qty').val(quantity);
+            calculateSubtotal($matched);
+        } else {
+            $template.find('span').css('background-image', 'url(' + $item.data('image') + ')');
+
+            $template.find('span').after("&nbsp;"+$item.data('name'));
+            $template.find('.price').text("$"+$item.data('price'));
+            $template.find('.subtotal').text('$' + $item.data('price'));
+            $template.data('id', $item.data('id'));
+            $template.data('price', $item.data('price'));
+            $template.data('subtotal', $item.data('price'));
+            $cart.append($template);
+        }
+        updateCartQuantity();
+        calculateAndUpdate();
+    });
+
+    function calculateSubtotal($item) {
+        var quantity = $item.find('.qty').val(),
+        price = $item.data('price'),
+        subtotal = quantity * price;
+
+        $item.find('.subtotal').text('$' + subtotal);
+        $item.data('subtotal', subtotal);
+    }
+
+    function calculateAndUpdate() {
+        var subtotal = 0,
+        items = $cart.children(),
+        shipping = items.length > 0 ? 5 : 0,
+        tax = 0;
+        items.each(function (index, item) {
+            var $item = $(item),
+            price = $item.data('subtotal');
+            subtotal += price;
+        });
+        $('.subtotalTotal').text(formatDollar(subtotal));
+        tax = subtotal * 0.05;
+        $('.taxes').text(formatDollar(tax));
+        $('.shipping').text(formatDollar(shipping));
+        $('.finalTotal').text(formatDollar(subtotal + tax + shipping));
+    }
+
+    function formatDollar(amount) {
+        return '$' + parseFloat(Math.round(amount * 100) / 100).toFixed(2);
+    }
+
+    function updateCartQuantity() {
+        var quantities = 0,
+        $cartQuantity = $('span.cart-quantity'),
+        items = $cart.children();
+
+        items.each(function (index, item) {
+            var $item = $(item),
+            quantity = +$item.find('.qty').val();
+            quantities += quantity;
+        });
+
+        if (quantities > 0) {
+            $cartQuantity.removeClass('empty');
+        } else {
+            $cartQuantity.addClass('empty');
+        }
+        $cartQuantity.text(quantities);
+    }
+
+    $('body').on('click', '.cart-items .item-remove', function () {
+        var $this = $(this),
+        $item = $this.parents('li');
+        $item.remove();
+        calculateSubtotal($item);
+        updateCartQuantity();
+        calculateAndUpdate();
+    });
+});
+
+
+</script>
+</body>
+</html>

@@ -1,46 +1,80 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <% include ../partials/header.ejs %>
+	<meta charset='UTF-8'>
+	<title>Home Page</title>
+	<link rel='stylesheet'  href='css/main.css'>
 </head>
 
 <body>
-    <header>
-        <div class="search">
-            <input type="submit" value="&#xf002;" class="search-btn fa ib-m">
-            <div class="search-slide ib-m">
-        		<input type="text" placeholder="Enter your search" class="ib-m">
-                <div class="search-close ib-m"><i class="fa fa-times"></i></div>
-        	</div>
+<div class="top-bar">
+  <div class="bar-inside">
+    <h2>
+      <a href="/">NODEJS Example</a>
+    </h2>
+  </div>
 
-        </div>
-        <div id="hamburger-menu"><a class="img-replace" href="#">Menu</a></div>
-    </header>
+</div>
+	<div id="page-wrap">
+	  <h1>Hello There!</h1>
+    <div class="tabs">
+       <div class="tab">
+           <input type="radio" id="tab-1" name="tab-group-1" checked>
+           <label for="tab-1">AJAX</label>
+           <div class="content">
+               <p>Stuff for Tab One</p>
+			   <button  id="button" onclick="loadTest()">Загрузить test!</button>
 
-    <nav id="main-nav">
-        <ul>
-            <li><a class="current" href="/">Home</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/shop">Shop</a></li>
-            <li><a href="/gallery">Gallery</a></li>
-            <li><a href="/contact">Contact</a></li>
-        </ul>
-    </nav>
+		       <script>
+			   function loadTest() {
+				 var xhr = new XMLHttpRequest();
 
-	<main>
+				 xhr.open('GET', '/public/test.html', true);
+				 xhr.send(); // (1)
 
-    </main>
+				 xhr.onreadystatechange = function() { // (3)
+					 if (xhr.readyState != 4) return;
 
-    <div id="shadow-layer"></div>
+					 button.innerHTML = 'Готово!';
 
+					 if (xhr.status != 200) {
+					   // обработать ошибку
+					   alert('Ошибка ' + xhr.status + ': ' + xhr.statusText);
+					 } else {
+					   // вывести результат
+					   console.log(xhr.responseText);
+					 }
 
-<span class='Top'><i class='fa fa-chevron-up'></i></span>
-<!-- / Product Templates for Shop & Cart -->
+				   }
+				 button.innerHTML = 'Загружаю...'; //2
+				 button.disabled = true;
+			   }
+		       </script>
+           </div>
+       </div>
 
-<script src="js/jquery.min.js"></script>
+       <div class="tab">
+           <input type="radio" id="tab-2" name="tab-group-1">
+           <label for="tab-2">Tab Two</label>
+           <div class="content">
+               <p>Stuff for Tab Two</p>
+			   <img src="images/1.jpg" />
+           </div>
+       </div>
 
-<script>
+        <div class="tab">
+           <input type="radio" id="tab-3" name="tab-group-1">
+           <label for="tab-3">Tab Three</label>
+           <div class="content">
+               <p>Stuff for Tab Three</p>
+			   <img src="images/2.jpg" />
+           </div>
+       </div>
+    </div>
 
-</script>
+</div>
+
 </body>
+
 </html>
