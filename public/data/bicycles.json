@@ -1,0 +1,122 @@
+[
+        {
+                "id":"0",
+                "name":"Bow Tie",
+                "description":"These coasters roll all of the greatest qualities into one: class, leather, and octocats.",
+                "price":18,
+                "oldprice":20,
+                "picture":"images/7.jpg",
+                "quantity":10,
+                "category":"Ties"
+            },
+            {
+                "id":"1",
+                "name":"Suit",
+                "description":"These coasters roll all of the greatest qualities into one: class, leather, and octocats.",
+                "price":38,
+                "oldprice":40,
+                "picture":"images/8.jpg",
+                "quantity":10,
+                "category":"Suits"
+            },
+            {
+                "id":"2",
+                "name":"Suit",
+                "description":"The mug you've been dreaming about. One sip from this ceramic 16oz fluid delivery system and you'll never go back to red cups.",
+                "price":38,
+                "oldprice":40,
+                "picture":"images/9.jpg",
+                "quantity":10,
+                "category":"Suits"
+            },
+            {
+                "id":"3",
+                "name": "Bow tie",
+                "description": "These coasters roll all of the greatest qualities into one: class, leather, and octocats. They also happen to protect surfaces from cold drinks.",
+                "price": 38,
+                "oldprice": 40,
+                "picture": "images/10.jpg",
+                "quantity": 10,
+                "category": "Suits"
+            },
+            {
+                "id":"4",
+                "name": "Sweater",
+                "description": "Set of two heavyweight 16 oz. Octopint glasses for your favorite malty beverage.",
+                "price": 38,
+                "oldprice": 40,
+                "picture": "images/11.jpg",
+                "quantity": 10,
+                "category": "Suits"
+            },
+            {
+                "id":"5",
+                "name": "Hat",
+                "description": "Check it. Blacktocat is back with a whole new direction. He's exited stealth mode and is ready for primetime, now with a stylish logo.",
+                "price": 38,
+                "oldprice": 40,
+                "picture": "images/12.jpg",
+                "quantity": 10,
+                "category": "Suits"
+            },
+            {
+                "id":"6",
+                "name": "Shoes",
+                "description": "Need a huge Octocat sticker for your laptop, fridge, snowboard, or ceiling fan? Look no further!",
+                "price": 38,
+                "oldprice": 40,
+                "picture": "images/7.jpg",
+                "quantity": 10,
+                "category": "Suits"
+            },
+            {
+                "id":"7",
+                "name": "Glasses",
+                "description": "Pixels are your friends. Show your bits in this super-comfy blue American Apparel tri-blend shirt with a pixelated version of your favorite aquatic feline",
+                "price": 38,
+                "oldprice": 40,
+                "picture": "images/8.jpg",
+                "quantity": 10,
+                "category": "Suits"
+            },
+            {
+                "id":"8",
+                "name": "Suit",
+                "description": "The mug you've been dreaming about. One sip from this ceramic 16oz fluid delivery system and you'll never go back to red cups.",
+                "price": 38,
+                "oldprice": 40,
+                "picture": "images/9.jpg",
+                "quantity": 10,
+                "category": "Suits"
+            },
+            {
+                "id":"9",
+                "name": "Bow tie",
+                "description": "These coasters roll all of the greatest qualities into one: class, leather, and octocats. They also happen to protect surfaces from cold drinks.",
+                "price": 38,
+                "oldprice": 40,
+                "picture": "images/10.jpg",
+                "quantity": 10,
+                "category": "Suits"
+            },
+            {
+                "id":"10",
+                "name": "Sweater",
+                "description": "Set of two heavyweight 16 oz. Octopint glasses for your favorite malty beverage.",
+                "price": 38,
+                "oldprice": 40,
+                "picture": "images/11.jpg",
+                "quantity": 10,
+                "category": "Suits"
+            },
+            {
+                "id":"11",
+                "name": "Hat",
+                "description": "Check it. Blacktocat is back with a whole new direction. He's exited stealth mode and is ready for primetime, now with a stylish logo.",
+                "price": 38,
+                "oldprice": 40,
+                "picture": "images/12.jpg",
+                "quantity": 10,
+                "category": "Suits"
+            }
+]

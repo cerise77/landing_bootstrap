@@ -1,0 +1,27 @@
+{
+  "name": "pilo",
+  "version": "1.0.0",
+  "description": "example",
+  "engines": {
+    "node": "5.9.1"
+  },
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "ejs": "2.4.1",
+    "express": "^4.13.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cerise77/pilo.git"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "express"
+  ],
+  "author": "cerise",
+  "license": "MIT"
+}
