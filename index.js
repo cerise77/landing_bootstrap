@@ -15,7 +15,8 @@ app.set('view engine', 'ejs');
 });*/
 
 router.get('/', (req, res, next) => {
-  res.render('index', { title: 'Express' });
+  /*res.render('index', { title: 'Express' });*/
+  response.send('Hello from Express!');
 });
 
 /*app.get('/', (request, response) => {
