@@ -1,5 +1,6 @@
 var express = require('express');
 var app = express();
+let router = express.Router();
 
 app.set('port', (process.env.PORT || 5000));
 
@@ -13,12 +14,13 @@ app.set('view engine', 'ejs');
   response.render('pages/index');
 });*/
 
-/*app.get('/', (req, res, next) => {
+router.get('/', (req, res, next) => {
   res.render('index', { title: 'Express' });
-});*/
-app.get('/', (request, response) => {
-  response.send('Hello from Express!');
 });
+
+/*app.get('/', (request, response) => {
+  response.send('Hello from Express!');
+});*/
 
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
