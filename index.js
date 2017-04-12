@@ -15,13 +15,17 @@ app.set('view engine', 'ejs');
 });*/
 
 app.get('/', (req, res, next) => {
-  /*res.render('index', { title: 'Express' });*/
-  res.send('Hello from Express!');
+  res.render('views/pages', 'ejs');
 });
 
-/*app.get('/', (request, response) => {
-  response.send('Hello from Express!');
+/*app.get('/', (req, res, next) => {
+  res.send('Hello from Express!');
 });*/
+
+/*app.get('/', (req, res, next) => {
+  res.send('Hello from Express!');
+});*/
+
 
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
