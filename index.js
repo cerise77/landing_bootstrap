@@ -1,6 +1,6 @@
 var express = require('express');
 var app = express();
-let router = express.Router();
+//let router = express.Router();
 
 app.set('port', (process.env.PORT || 5000));
 
@@ -14,7 +14,7 @@ app.set('view engine', 'ejs');
   response.render('pages/index');
 });*/
 
-router.get('/', (req, res, next) => {
+app.get('/', (req, res, next) => {
   /*res.render('index', { title: 'Express' });*/
   res.send('Hello from Express!');
 });
