@@ -1,155 +1,3 @@
-
-<!DOCTYPE html>
-<html>
-<head>
-
-    <% include ../partials/header.ejs %>
-
-</head>
-
-<body>
-    <header>
-        <div class="search">
-            <input type="submit" value="&#xf002;" class="search-btn fa ib-m">
-            <div class="search-slide ib-m">
-        		<input type="text" placeholder="Enter your search" class="ib-m">
-                <div class="search-close ib-m"><i class="fa fa-times"></i></div>
-        	</div>
-
-        </div>
-        <div id="hamburger-menu"><a class="img-replace" href="#">Menu</a></div>
-        <div id="cart-trigger">
-            <a class="cart-link" href="#">
-            <span class="cart-text fa fa-shopping-cart"><span class="cart-quantity empty">0</span></span>
-          </a>
-        </div>
-        <!-- Mega Menu -->
-        <div class="mega-menu fadeIn animated" id="mega_menu">
-            <div class="mm-3column">
-                <span class="left-images">
-                    <img  src="images/4.jpg">
-                    <p><a href="#">Most Popular Styles </a></p>
-                </span>
-                </div>
-                <div id="close-menu"><a class="img-replace" href="#">Menu</a></div>
-                <div class="mm-3column">
-                <span class="categories-list">
-                    <span class="link"><i class="fa fa-mobile"></i>&nbsp;Computer</span>
-                    <ul class="default submenu">
-                        <li><a href="#">Desktops</a></li>
-                        <li><a href="#">Laptops</a></li>
-                        <li><a href="#">Tablets</a></li>
-                        <li><a href="#">Monitors</a></li>
-                        <li><a href="#">Networking Printers</a></li>
-                        <li><a href="#">Scanners</a></li>
-                        <li><a href="#">Jumpers & Cardigans</a></li>
-                    </ul>
-                </span>
-
-            </div>
-            <div class="mm-3column">
-                <span class="categories-list">
-                    <span class="link"><i class="fa fa-mobile"></i>&nbsp;Rest & Sport</span>
-                    <ul class="default submenu">
-                        <li><a href="#" class=".bike">Bicycles</a></li>
-                        <li><a href="#">Plasma TVs</a></li>
-                        <li><a href="#">3D TVs</a></li>
-                        <li><a href="#">DVD & Blu-ray Players</a></li>
-                        <li><a href="#">Home Theater Systems</a></li>
-                        <li><a href="#">Cell Phones</a></li>
-                        <li><a href="#">Apple iPhone</a></li>
-
-                    </ul>
-                </span>
-            </div>
-            <div class="mm-3column">
-                <span class="categories-list">
-                    <span class="link"><i class="fa fa-mobile"></i>&nbsp;Clothes</span>
-                    <ul class="default submenu">
-                        <li><a href="#">Clothes</a></li>
-                        <li><a href="#">Man</a></li>
-                        <li><a href="#">Speakers</a></li>
-                        <li><a href="#">Subwoofers</a></li>
-                        <li><a href="#">Amplifiers</a></li>
-                        <li><a href="#">MP3 Players</a></li>
-                        <li><a href="#">iPods</a></li>
-                    </ul>
-            </span>
-        </div>
-    </div>
-    <!-- Mega Menu -->
-    </header>
-
-    <nav id="main-nav">
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a class="current" href="#">Shop</a></li>
-            <li class="drop-down"><a href="#">Catalog</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </nav>
-
-<main>
-        <ul id="gallery-items" class="container">
-        </ul> <!-- cd-gallery-items -->
-    </main>
-
-    <div id="shadow-layer"></div>
-
-    <div id="cart">
-        <h2>Cart</h2>
-        <ul class="cart-items">
-        </ul> <!-- cart-items -->
-
-        <div class="cart-total">
-            <p>Subtotal <span class="subtotalTotal">$0.00</span></p>
-            <p>Tax <span class="taxes">$0.00</span></p>
-            <p>Shipping <span class="shipping">$0.00</span></p>
-            <p>Total <span class="finalTotal">$0.00</span></p>
-        </div> <!--cart-total -->
-
-        <a href="#" class="checkout-btn">Checkout</a>
-        <p class="error"></p>
-        <p class="go-to-cart"><a href="#">Go to cart page</a></p>
-    </div> <!-- cart -->
-
-<span class='Top'><i class='fa fa-chevron-up'></i></span>
-<!-- / Product Templates for Shop & Cart -->
-<script id="productTemplate" type="text/template">
-  <figure class="product">
-      <img />
-     <div class="button">
-      <div class="prices"></div>
-      <a class="addtocart">
-      <div class="add">Add to Cart</div>
-      <div class="added">Added!</div>
-      </a>
-  </div>
-  <figcaption>
-  <h3></h3>
-  <p></p>
-  <div class="price">
-    <s></s>
-  </div>
-</figcaption><a href="#"><i class="add">&nbsp;</i>
-  </a>
-  </figure>
-</script>
-
-<script id='cartItem' type='text/template'>
-  <li class="cart-product">
-      <span><input class="qty" value="1"></span>
-      <div class="price"></div>
-      <a href="#" class="item-remove img-replace">Remove</a>
-      <code class="subtotal"></code>
-  </li>
-</script>
-
-<script src="js/jquery.min.js"></script>
-<script src="js/shop.js"></script>
-<script>
-
 $(document).ready(function () {
 
     var $cart = $('.cart-items');
@@ -195,6 +43,7 @@ $(document).ready(function () {
             $('.Top').fadeOut();
         }
     });
+
     $('.Top').click(function () {
         $('html,body').stop().animate({ scrollTop: 0 });
     });
@@ -206,6 +55,24 @@ $(document).ready(function () {
     $('#close-menu').on('click', function () {
         $('.mega-menu').removeClass('speed-in');
     });
+
+
+    $('.login').on('click', function () {
+    $('.log-in').toggleClass('speed-in');
+    });
+    $('#close-login').on('click', function () {
+    $('.log-in').removeClass('speed-in');
+    });
+
+
+    $('.checkout-btn').on('click', function () {
+      $('.check').toggleClass('speed-in');
+      /*console.log("dxmdklgnlnfkl");*/
+    });
+    $('#close-check').on('click', function () {
+        $('.check').removeClass('speed-in');
+    });
+
 
     var searchBtn = '.search-btn', searchSlide = '.search-slide', searchTxt = '.search-slide input[type=text]', searchClose = '.search-close', searchSpeed = 300;
     $(searchBtn).click(function () {
@@ -251,7 +118,7 @@ $(document).ready(function () {
     });
     }
 
-    makeCatalog("data/catalog.json");
+    makeCatalog("data/jersey1.json");
 
     var submenu = 'catalog';
 
@@ -260,13 +127,13 @@ $(document).ready(function () {
         $('.mega-menu').removeClass('speed-in');
 
         switch (submenu){
-            case 'Bicycles':
+            case 'Skirts':
                 $("#gallery-items").empty();
-                makeCatalog("data/bicycles.json");
+                makeCatalog("data/skirts1.json");
                 break;
             default:
                 $("#gallery-items").empty();
-                makeCatalog("data/catalog.json");
+                makeCatalog("data/jersey1.json");
             }
     });
 
@@ -355,6 +222,47 @@ $(document).ready(function () {
 });
 
 
-</script>
-</body>
-</html>
+function toggle_panel_visibility(panel, background_layer, body) {
+    if (panel.hasClass('speed-in')) {
+        panel.removeClass('speed-in');
+        background_layer.removeClass('is-visible');
+        body.removeClass('overflow-hidden');
+    } else {
+        panel.addClass('speed-in');
+        background_layer.addClass('is-visible');
+        body.addClass('overflow-hidden');
+    }
+}
+
+function move_navigation(navigation, $MQ) {
+    if ($(window).width() >= $MQ) {
+        navigation.detach();
+        navigation.appendTo('header');
+    } else {
+        navigation.detach();
+        navigation.insertAfter('header');
+    }
+}
+
+
+
+    var Accordion = function (el, multiple) {
+        this.el = el || {};
+        this.multiple = multiple || false;
+        var links = this.el.find('.link');
+        links.on('click', {
+            el: this.el,
+            multiple: this.multiple
+        }, this.dropdown);
+    };
+
+    Accordion.prototype.dropdown = function (e) {
+        var $el = e.data.el;
+        $this = $(this),
+        $next = $this.next();
+        $next.slideToggle();
+        $this.parent().toggleClass('open');
+        if (!e.data.multiple) {
+            $el.find('.submenu').not($next).slideUp().parent().removeClass('open');
+        }
+    };
