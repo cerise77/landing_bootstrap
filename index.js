@@ -1,5 +1,6 @@
 var express = require('express');
 var app = express();
+let rooot = require('./models');
 //let router = express.Router();
 
 app.set('port', (process.env.PORT || 5000));
@@ -15,7 +16,7 @@ app.set('view engine', 'ejs');
   response.render('pages/index');
 });*/
 
-app.use(require('./models'));
+//app.use(require('./models'));
 
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
