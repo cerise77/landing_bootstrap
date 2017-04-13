@@ -14,8 +14,8 @@ app.set('view engine', 'ejs');
   response.render('pages/index');
 });*/
 
-app.get('/', (req, res, next) => {
-  res.render('views/pages', 'ejs');
+app.get('/', function(request, response) {
+  response.render('pages/index');
 });
 
 /*app.get('/', (req, res, next) => {
