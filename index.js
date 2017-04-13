@@ -18,6 +18,10 @@ app.get('/', function(request, response) {
   response.render('pages/index');
 });
 
+app.get('/', function(request, response) {
+  response.render('pages/contacts');
+});
+
 /*app.get('/', (req, res, next) => {
   res.send('Hello from Express!');
 });*/
