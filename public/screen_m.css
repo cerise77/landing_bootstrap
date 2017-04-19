@@ -1,0 +1,106 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+#banner {
+	position: relative;
+	background-image: url('img/22.jpg');
+	background-color: #b0b0d9;
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	text-align: center;
+	padding: 260px 0;
+	margin-bottom: 20px;
+	color: #bdb6b5;
+}
+#banner h2 {
+	font-size: 40px;
+	color:#ddddf6;
+	line-height: 35px;
+	padding: 0 0 25px 0;
+	margin: 0
+}
+#banner p {
+	font-size: 17px;
+	margin-bottom: 20px;
+}
+#banner p a {
+	text-decoration: none;
+	font-weight: 600;
+	color: #d1c8c7;
+}
+
+
+
+.services {
+	margin: 20px 0 10px;
+	background: #9494bc;
+	text-align: center;
+  padding: 20px;
+}
+ul.table {
+	font-family: 'Tahoma', sans-serif;
+	list-style: none;
+}
+ul.table li.column {
+	display: inline-block;
+	vertical-align: middle;
+	width: 200px;
+	/*margin-right: 15px;*/
+}
+.price {
+	/*margin: 0 auto;*/
+	background: #fff;
+}
+.services h2 {
+	color: #fff;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 25px;
+	margin-bottom: 10px;
+}
+.price h3 {
+	padding: 10px 0 15px;
+	margin-bottom: 25px;
+	color: #5d5d9f;
+	font-size: 18px;
+	font-weight: bold;
+  background: #e0e0e0;
+}
+.price span {
+	display: block;
+	margin: 10px auto -85px;
+	padding: 20px 0 0;
+	height: 100px;
+	width: 130px;
+	font-size: 17px;
+	font-family: "Georgia", sans-serif;
+	font-weight: bold;
+	background: #fff;
+	color: #7a7ab5;
+	border-radius: 100px;
+}
+.price .signup {
+	padding: 7px 7px;
+	background: #ffa201;
+	border-radius: 10px;
+	font: bold 12px 'Tahoma', sans-serif;
+	color: #fff;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+.price .signup:hover {
+	background-color: #ffbc47;
+}
+.price ul {
+	list-style: none;
+	margin: 25px 15px 10px;
+}
+.price ul li {
+	text-align: center;
+	padding: 7px 0;
+	font: 14px 'Tahoma', sans-serif;
+	border-top: solid 1px #ddd;
+}
