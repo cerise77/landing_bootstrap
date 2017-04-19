@@ -16,7 +16,7 @@ app.set('view engine', 'ejs');
   response.render('pages/index');
 });*/
 
-//app.use(require('./models'));
+app.use('/', rooot);
 
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
